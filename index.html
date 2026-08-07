@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amahle & Lindelwa — 28 November 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .nav-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    #nav {
+      display: none;
+      position: fixed;
+      top: 3.5rem;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+      padding: 9rem 1.25rem;
+      border: 1px solid rgba(54, 53, 53, 0.556);
+      background: rgba(34, 33, 33, 0.681); 
+      box-shadow: none;
+      z-index: 999;
+    }
+
+    #nav.open {
+      display: flex;
+    }
+
+    #nav a {
+      font-size: 12px;
+      color: #ffffff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     ENVELOPE ENTRY SCREEN
+══════════════════════════════ -->
+<div id="envelope-screen">
+
+    <p class="env-hint">You have a letter waiting</p>
+
+    <img
+        src="/wedding-invitation/Images/Front-env-bg.png"
+        class="env"
+        alt="Envelope"
+        id="envFlap"
+        onclick="openEnvelope()"
+        style="cursor:pointer;">
+
+    <div
+        class="envelope-wrap"
+        id="envelopeWrap"
+        onclick="openEnvelope()"
+        role="button"
+        tabindex="0"
+        aria-label="Open your wedding invitation"
+        onkeydown="if(event.key==='Enter'||event.key===' ')openEnvelope()">
+
+    </div>
+
+    <button
+        class="env-open-btn"
+        id="envOpenBtn"
+        onclick="openEnvelope()">
+
+        Open your invitation
+
+    </button>
+
+</div>
+<!-- ══════════════════════════════
+     MAIN WEBSITE
+══════════════════════════════ -->
+<div id="main-site">
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.classList.toggle('open'); document.getElementById('nav').classList.toggle('open'); this.setAttribute('aria-expanded', this.classList.contains('open'))">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="nav">
+    <a href="#story">Our Story</a>
+    <a href="#timeline">Details</a>
+    <a href="#venue">Venue</a>
+    <a href="#registry">Registry</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
+ 
+
+  <!-- HERO -->
+  <div class="hero" data-images='["/wedding-invitation/Images/IMG_1681.JPG" , "/wedding-invitation/Images/IMG_1679.JPG" , "/wedding-invitation/Images/IMG_1682.JPG"]'>
+    <p class="ornament">✦ &nbsp; ✦ &nbsp; ✦</p>
+    <p class="hero-tag">Together with their families · invite you to celebrate</p>
+    <div class="hero-names">
+      Amahle
+      <span class="hero-ampersand">&amp;</span>
+      Lindelwa
+    </div>
+    <div class="hero-date-line">28 &nbsp;·&nbsp; November &nbsp;·&nbsp; 2026</div>
+    <p class="scroll-hint">↓ &nbsp; scroll to explore</p>
+  </div>
+
+  <!-- STORY -->
+  <div class="story-wrap section-wrap" id="story">
+    <div class="section-inner">
+      <div class="divider"><div class="diamond"></div></div>
+      <p class="section-tag">Our love story</p>
+      <h2 class="section-title">A beginning worth remembering</h2>
+      <div class="story-grid">
+        <div class="photo-frame">
+          <img src="/wedding-invitation/Images/IMG_1682.JPG" alt="Isabella and James">
+          <div class="photo-frame-border"></div>
+        </div>
+        <div class="story-body">
+          <p>Our story starts with a Whatsapp status update but really, it begins with a show we still find ourselves coming back to every winter - Game of Thrones.</p>
+          <div class="pull-quote">We were only in our 2nd year of university, still so young, and somehow already looking for home in each other. Our paths crossed, diverged and crossed again as if there was a force gently tugging on us to keep finding each other. 
+</div>
+          <p>Fostering our connection during a global pandemic was not easy but we always say it’s what made our foundation even stronger. Bonding over long phone calls (that our families complained about), movie/series suggestions and debriefs and whatever contentious topic was trending on the socials.</p>
+          <p>Once united, we just knew that this time our paths had finally converged into one, gently tugging us to our forever.</p>
+<p>We hope you can join us on 28.11.2026, to celebrate a new beginning of our journey with each other.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAILS -->
+ <!-- ── TIMELINE ── -->
+  <section class="timeline-section" id="timeline">
+    <div class="timeline-swirl">~</div>
+    <div class="timeline-inner">
+      <h2 class="timeline-heading">Wedding Timeline</h2>
+      <div class="timeline-items">
+        <div class="tl-item">
+          <div class="tl-time">11:30</div>
+          <div class="tl-dot"><div class="tl-dot-circle"></div></div>
+          <div class="tl-info">
+            <div class="tl-title">Guest Arrival</div>
+            <div class="tl-desc">Drinks on arrival — bring good cheer and even better company</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-info">
+            <div class="tl-title">Wedding Ceremony</div>
+            <div class="tl-desc">The most treasured and unforgettable moment of the entire day</div>
+          </div>
+          <div class="tl-dot"><div class="tl-dot-circle"></div></div>
+          <div class="tl-time">12:00</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">14:00</div>
+          <div class="tl-dot"><div class="tl-dot-circle"></div></div>
+          <div class="tl-info">
+            <div class="tl-title">Lunch Begins</div>
+            <div class="tl-desc">Lunch, dancing and toasts — the celebration continues late into the evening</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── DRESS CODE ── -->
+  <section class="dress-section">
+    <div class="dress-inner">
+      <p class="section-tag">Attire</p>
+      <h2 class="timeline-heading2">Dress Code</h2>
+      <div class="swatch-grid">
+        <div class="swatch" style="background:#A0A168;" title="Sgae green"></div>
+        <div class="swatch" style="background:#F4EEBE;" title="Butter cream"></div>
+        <div class="swatch" style="background:#EBCB75;" title="Champange gold"></div>
+        <div class="swatch" style="background:#C4D7E7;" title="Powder blue"></div>
+        <div class="swatch" style="background:#1C371A" title="Forest olive"></div>
+
+      </div>
+      <p class="dress-note">We invite you to dress in garden elegence, light neutral tones — butter cream, forest greens, powder blues, and earthy neutrals. No white please, and we encourage you to dress to impress. The evening calls for elegance.</p>
+      
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-wrap" style="position:relative; overflow:hidden; min-height:360px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <h2 class="section-title2">Counting down to forever</h2>
+    <div class="countdown-grid" style="position:relative; z-index:1; display:flex; justify-content:center; align-items:center; gap:1rem; padding:0.5rem 1rem 1rem; color:#fff;">
+      <div class="countdown-unit"><span class="countdown-number" id="cd-days">—</span><div class="countdown-unit-label">Days</div></div>
+      <span class="countdown-sep">·</span>
+      <div class="countdown-unit"><span class="countdown-number" id="cd-hours">—</span><div class="countdown-unit-label">Hours</div></div>
+      <span class="countdown-sep">·</span>
+      <div class="countdown-unit"><span class="countdown-number" id="cd-mins">—</span><div class="countdown-unit-label">Minutes</div></div>
+      <span class="countdown-sep">·</span>
+      <div class="countdown-unit"><span class="countdown-number" id="cd-secs">—</span><div class="countdown-unit-label">Seconds</div></div>
+    </div>
+  </div>
+
+  <!-- VENUE -->
+  <div class="venue-wrap section-wrap" id="venue">
+    <div class="section-inner">
+      <div class="divider"><div class="diamond"></div></div>
+      <p class="section-tag">Finding us</p>
+      <h2 class="section-title">The Venue</h2>
+      <div class="venue-grid">
+        <div class="venue-info">
+          <h3>Magaliesberg Mountain Retreat</h3>
+          <p>Nestled in the unique Magaliesberg conservation area, this luxurious retreat offers breathtaking vineyard views and timeless elegance.</p>
+          <div class="venue-rows">
+            <div class="venue-row"><span class="vr-label">Address</span><span>Farm stay in Maanhaarrand, South Africa</span></div>
+            <div class="venue-row"><span class="vr-label">Parking</span><span>Complimentary on-site parking available at the estate gates</span></div>
+            <div class="venue-row"><span class="vr-label">Nearby</span><span>Intaba Thulile — 3 min drive / 15 min walk</span></div>
+            <div class="venue-row"><span class="vr-label">Contact</span><span>Refer to link on the map</span></div>
+          </div>
+        </div>
+        <div class="map-block">
+          <iframe src="https://www.booking.com/hotel/za/intaba-thulile.en-gb.html?aid=356980&label=gog235jc-10CAso-wFCDmludGFiYS10aHVsaWxlSDNYA2j7AYgBApgBM7gBB8gBDdgBA-gBAfgBAYgCAagCAbgCz6mM0wbAAgHSAiRjOTdhM2YxZi02MzEwLTQ1YmItOWRmNy0zNGZjZmMxOGViM2bYAgHgAgE&sid=51d052c341a43cafb9e6b9c1f2e13b02&dest_id=-1255103&dest_type=city&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1784878292&srpvid=725b34e8adc200a6&type=total&ucfs=1&#map_opened-map_trigger_header" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Rosewood Manor Estate — Franschhoek"></iframe>
+          <a class="map-btn" href="https://www.booking.com/hotel/za/intaba-thulile.en-gb.html?aid=356980&label=gog235jc-10CAso-wFCDmludGFiYS10aHVsaWxlSDNYA2j7AYgBApgBM7gBB8gBDdgBA-gBAfgBAYgCAagCAbgCz6mM0wbAAgHSAiRjOTdhM2YxZi02MzEwLTQ1YmItOWRmNy0zNGZjZmMxOGViM2bYAgHgAgE&sid=51d052c341a43cafb9e6b9c1f2e13b02&dest_id=-1255103&dest_type=city&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1784878292&srpvid=725b34e8adc200a6&type=total&ucfs=1&#map_opened-map_trigger_header" target="_blank" rel="noopener noreferrer">Open in Google Maps &nbsp;↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div style="padding: 4rem 0 5rem; background-image: linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.62)), url('/wedding-invitation/Images/pattern-floral.avif'); background-size: cover; background-position: center;">
+    <p class="section-title">Memories so far</p>
+    <div class="gallery-strip">
+      <img src="/wedding-invitation/Images/IMG_1599.JPG" alt="Couple laughing outdoors" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1605.JPG" alt="Couple portrait" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1608.JPG" alt="Couple at sunset" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1691.JPG" alt="Wedding portrait" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1681.JPG" alt="Wedding ceremony" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1678 (1).JPG" alt="Wedding decor" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1679.JPG" alt="Wedding cake" style="height:260px;width:auto;">
+      <img src="/wedding-invitation/Images/IMG_1682.JPG" alt="Wedding bouquet" style="height:260px;width:auto;">
+    </div>
+  </div>
+ 
+  <!-- GIFT REGISTRY -->
+  <div class="registry-wrap section-wrap" id="registry">
+    <div class="section-inner">
+      <p class="section-tag">Gift registry</p>
+      <h2 class="section-title">Gift registry</h2>
+      <p class="registry-text">Your presence at our wedding is the greatest gift —<br> but if you'd like to give, we've prepared a few thoughtful options to help us begin our life together.<br>Password: NanawedsAya</p>
+      <div class="registry-grid" style="display:flex; gap:1rem; justify-content:center; align-items:center; margin-top:1.75rem;">
+        <a class="btn-registry" href="https://www.myregistry.com/wedding-registry/amahle-mkhwanazi-and-lindelwa-bhengu-johannesburg-gauteng/5511598" target="_blank" rel="noopener noreferrer">View Our Registry &nbsp;↗</a>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- RSVP -->
+  <div class="rsvp-wrap section-wrap" id="rsvp">
+    <div class="rsvp-inner">
+      <div class="rsvp-card">
+      <p class="section-tag">Your response</p>
+      <h2 class="section-title2">Kindly RSVP</h2>
+      <p class="rsvp-intro">Please let us know if you'll be joining us to celebrate. We'd love to know you're coming, and we'd love to ensure everything is perfect for you.</p>
+      <div id="rsvpForm">
+        <div class="form-row">
+          <div class="form-group"><label class="field-label">First Name *</label><input type="text" id="fname" placeholder="Your first name"></div>
+          <div class="form-group"><label class="field-label">Last Name *</label><input type="text" id="lname" placeholder="Your surname"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="field-label">Email Address *</label><input type="email" id="email" placeholder="your@email.com"></div>
+          <div class="form-group"><label class="field-label">Phone Number</label><input type="text" id="phone" placeholder="+27 00 000 0000"></div>
+        </div>
+        
+        <div class="form-row" style="grid-template-columns:1fr;">
+          <div class="form-group">
+            <label class="field-label">Will you be attending? *</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" id="acceptBtn" name="attend" value="yes"> Joyfully accepts</label>
+              <label class="radio-opt"><input type="radio" id="declineBtn" name="attend" value="no"> Regretfully declines</label>
+            </div>
+          </div>
+        </div>
+       
+        <button class="btn-submit" onclick="submitRSVP()">Send My RSVP</button>
+        <p class="rsvp-note">Kindly respond by <strong>1 October 2026</strong></p>
+      </div>
+      <div class="success-msg" id="successMsg">
+        <div class="s-icon">✦</div>
+        <h3>Thank you!</h3>
+        <p>We've received your RSVP and are so glad you'll be joining us on our special day.</p>
+        <p class="sig">With love, Lindelwa &amp; Amahle</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-names">Lindelwa &amp; Amahle</div>
+    <div class="footer-date">28 · November · 2026 &nbsp;·&nbsp; Magalisberg, Gauteng</div>
+    <div class="footer-divider"></div>
+    <div class="footer-links">
+      <a href="#story">Our Story</a>
+      <a href="#timeline">The Day</a>
+      <a href="#venue">Venue</a>
+      <a href="#registry">Registry</a>
+      <a href="#rsvp">RSVP</a>
+    </div>
+    <div class="footer-made">Crafted with love.</div>
+  </footer>
+
+</div><!-- /#main-site -->
+
+<script>
+  /* ══ ENVELOPE ANIMATION ══ */
+  let buttonClicked = false;
+
+const screen = document.getElementById("envelope-screen");
+const site = document.getElementById("main-site");
+const seal = document.getElementById("envFlap");
+
+function openEnvelope() {
+
+    if (buttonClicked) return;
+
+    buttonClicked = true;
+
+    seal.classList.add("break");
+
+    spawnPetals();
+
+    setTimeout(() => {
+
+        screen.classList.add("hidden");
+        site.classList.add("visible");
+
+    }, 400);
+
+}
+
+  function spawnPetals() {
+    const btn = document.getElementById('envOpenBtn');
+    const r = btn.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height * 0.3;
+    const symbols = ['✿', '❀', '✾', '❁', '✽', '⁂'];
+    const colors  = ['#c9a96e','#e8d5b0','#a07840','#d4b896','#b8965a'];
+    for (let i = 0; i < 16; i++) {
+      const el = document.createElement('div');
+      el.className = 'petal';
+      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      el.style.left = (cx + (Math.random() - 0.5) * 200) + 'px';
+      el.style.top  = (cy + (Math.random() - 0.5) * 100) + 'px';
+      el.style.color = colors[Math.floor(Math.random() * colors.length)];
+      el.style.fontSize = (12 + Math.random() * 16) + 'px';
+      el.style.animationDelay = (Math.random() * 0.6) + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+  }
+
+  /* ══ NAV SCROLL SHADOW ══ */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  /* ══ LIVE COUNTDOWN ══ */
+  function updateCountdown() {
+    const diff = new Date('2026-11-28T00:00:00').getTime() - Date.now();
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '0');
+      return;
+    }
+    document.getElementById('cd-days').textContent  = Math.floor(diff / 864e5);
+    document.getElementById('cd-hours').textContent = Math.floor((diff % 864e5) / 36e5);
+    document.getElementById('cd-mins').textContent  = Math.floor((diff % 36e5) / 6e4);
+    document.getElementById('cd-secs').textContent  = Math.floor((diff % 6e4) / 1e3);
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ══ RSVP FORM ══ */
+  let attending = "";
+  const acceptBtn = document.getElementById("acceptBtn");
+const declineBtn = document.getElementById("declineBtn");
+
+acceptBtn.addEventListener("click", () => {
+    attending = "yes";
+
+    acceptBtn.classList.add("selected");
+    declineBtn.classList.remove("selected");
+});
+
+declineBtn.addEventListener("click", () => {
+    attending = "no";
+
+    declineBtn.classList.add("selected");
+    acceptBtn.classList.remove("selected");
+});
+
+async function submitRSVP() {
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (!fname || !lname || !email) {
+        alert('Please fill in your name and email before sending.');
+        return;
+    }
+
+    if (attending === "") {
+        alert("Please let us know whether you'll be attending.");
+        return;
+    }
+
+    const formData = new FormData();
+formData.append("fname", fname);
+formData.append("lname", lname);
+formData.append("email", email);
+formData.append("attending", attending);
+
+try{
+const response = await fetch("https://script.google.com/macros/s/AKfycbxw6HjbV_8Al_PmSQ1Ug0A9EKITYhd3F_HcDIGqfN7PtWIo5bM2w87CnqaXsElpH2lvYQ/exec", {
+    method: "POST",
+    body: formData
+});
+
+        const result = await response.json();
+
+        if (result.success) {
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        } else {
+            alert(result.error);
+            
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Something went wrong." + error.message);
+    }
+}
+  /* ══ SMOOTH NAV SCROLL ══ */
+  const navToggle = document.querySelector('.nav-toggle');
+
+  function closeMobileNav() {
+    nav.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  document.querySelectorAll('nav a, .footer-links a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const targetSelector = a.getAttribute('href');
+      const t = document.querySelector(targetSelector);
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMobileNav();
+    });
+  });
+</script>
+
+<script>
+  // Image rotation for hero background
+  const hero = document.querySelector('.hero');
+  const images = JSON.parse(hero.getAttribute('data-images'));
+  let currentImageIndex = 0;
+
+  function setBackgroundImage(index) {
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    hero.style.backgroundSize = 'cover';
+    hero.style.backgroundPosition = 'center top';
+    hero.style.backgroundAttachment = 'fixed';
+  }
+
+  function rotateImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    setBackgroundImage(currentImageIndex);
+  }
+
+  // Set initial background
+  setBackgroundImage(0);
+
+  // Rotate every 5 seconds (adjust interval as needed)
+  setInterval(rotateImage, 5000);
+</script>
+
+</body>
+</html>
