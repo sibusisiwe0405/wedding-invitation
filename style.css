@@ -18,7 +18,7 @@
   #envelope-screen {
     
     position: fixed; inset: 0; z-index: 9999;
-    background: linear-gradient(145deg, #f0e8d6 0%, #faf5ec 45%, #ede5d4 100%);
+    background: linear-gradient(145deg, #f6f0e9 0%, #f6f0e9 45%, #f6f0e9 100%);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     transition: opacity 0.9s ease, visibility 0.9s ease;
   }
@@ -119,16 +119,16 @@
   .hero { min-height: 100vh; background: linear-gradient(160deg, #f5f0e8 0%, #fdf8f0 50%, #f0e8d8 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 150px 2rem 5rem; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 50%, rgba(201,169,110,0.10) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(201,169,110,0.07) 0%, transparent 50%); pointer-events: none; }
   .ornament { color: var(--gold); font-size: 1rem; letter-spacing: 0.4em; margin-bottom: 1.5rem; opacity: 0.65; animation: fadeUp 1s ease both; }
-  .hero-tag { font-family: 'Josefin Sans', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); margin-bottom: 1.5rem; animation: fadeUp 1s ease 0.15s both; }
+  .hero-tag { font-family: 'Josefin Sans', sans-serif; font-size: 15px; font-style: bold; font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); margin-bottom: 1.5rem; animation: fadeUp 1s ease 0.15s both; }
   .hero-names { font-size: clamp(3.5rem, 9vw, 6.5rem); font-weight: 300; font-style: italic; line-height: 1.05; color: var(--warm-white); position: relative; z-index: 1; animation: fadeUp 1s ease 0.3s both; }
   .hero-ampersand { color: var(--gold); font-size: clamp(5rem, 12vw, 9rem); line-height: 0.85; display: block; }
-  .hero-date-line { font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 200; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.5rem; display: flex; align-items: center; gap: 1.5rem; animation: fadeUp 1s ease 0.45s both; }
+  .hero-date-line { font-family: 'Josefin Sans', sans-serif; font-size: clamp(1.0rem, 1vw, 1.0rem); font-weight: 300; letter-spacing: 0.40em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.5rem; display: flex; align-items: center; gap: 1.5rem; animation: fadeUp 1s ease 0.45s both; }
   .hero-date-line::before, .hero-date-line::after { content: ''; flex: 1; max-width: 70px; height: 1px; background: var(--border); }
   .hero-photos img { object-fit: cover; border-radius: 2px; filter: sepia(12%) contrast(0.95) brightness(1.05); transition: filter 0.4s, transform 0.4s; }
   .hero-photos img:hover { filter: sepia(0%) contrast(1) brightness(1.08); transform: scale(1.02); }
   .photo-main { width: 340px; height: 430px; }
   .photo-side { width: 200px; height: 285px; }
-  .scroll-hint { margin-top: 3rem; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); animation: bounce 2.5s ease-in-out infinite; }
+  .scroll-hint { margin-top: 3rem; font-family: 'Josefin Sans', sans-serif; font-size: 15px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); animation: bounce 2.5s ease-in-out infinite; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
 
@@ -161,7 +161,7 @@
     position: absolute;
     inset: 0;
     background-image: url(/wedding-invitation/Images/pattern-floral.avif);
-    opacity: 0.12;
+    opacity: 0.22;
     z-index: 0;
 }
 /* Decorative swirl behind */
@@ -281,12 +281,14 @@
   content: '✦';
   position: absolute; bottom: 18px; right: 22px;
   font-size: 0.7rem; color: var(--warm-white); opacity: 0.35; transform: rotate(45deg);
+   pointer-events: none;
 }
   .rsvp-wrap { background-image: url(/wedding-invitation/Images/sunflowers.avif); background-size: cover; padding: 6rem 2rem; }
   .rsvp-inner { max-width: 600px; margin: 0 auto; }
   .rsvp-intro { font-size: 1.15rem; color: var(--warm-white); line-height: 1.85; text-align: center; margin-bottom: 3rem; margin-top: 0.5rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-  .form-group { display: flex; flex-direction: column; }
+  .form-group { position: relative;
+    z-index: 2; }
   label.field-label { font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-white); margin-bottom: 0.5rem; }
   input[type="text"], input[type="email"], select, textarea { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-dark); background: var(--cream); border: 1px solid var(--border); border-radius: 2px; padding: 0.75rem 1rem; outline: none; transition: border-color 0.25s, box-shadow 0.25s; width: 100%; appearance: none; -webkit-appearance: none; }
   input:focus, select:focus, textarea:focus { border-color: var(--warm-white); box-shadow: 0 0 0 3px rgba(201,169,110,0.15); }
@@ -295,7 +297,8 @@
   .radio-opt { display: flex; align-items: center; gap: 0.6rem; cursor: pointer; font-size: 1.05rem; color: var(--warm-white); transition: color 0.2s; }
   .radio-opt input { width: auto; margin: 0; cursor: pointer; accent-color: var(--gold); }
   .radio-opt:hover { color: var(--text-dark); }
-  .btn-submit { width: 100%; padding: 1.05rem; margin-top: 1.75rem; background: var(--gold); color: var(--cream); border: none; cursor: pointer; border-radius: 2px; font-family: 'Josefin Sans', sans-serif; font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase; transition: background 0.25s, transform 0.15s; }
+  .btn-submit {   position: relative;
+    z-index: 1000; width: 100%; padding: 1.05rem; margin-top: 1.75rem; background: var(--gold); color: var(--cream); border: none; cursor: pointer; border-radius: 2px; font-family: 'Josefin Sans', sans-serif; font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase; transition: background 0.25s, transform 0.15s; }
   .btn-submit:hover { background: var(--gold); }
   .btn-submit:active { transform: scale(0.99); }
   .rsvp-note { margin-top: 1.25rem; font-size: 0.9rem; color: var(--warm-white); font-style: italic; text-align: center; }
