@@ -27,14 +27,15 @@
   .env-hint {
     font-family: 'Josefin Sans', sans-serif; font-size: 12px;
     letter-spacing: 0.45em; text-transform: uppercase; color: var(--text-light);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   @keyframes envPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
 .env {
     cursor: pointer;
     transition: transform 0.4s ease;
-   min-height: auto; max-height: 100%; width: auto; max-width: 121%;
+   min-height: auto; max-height: 100%; width: auto; max-width: 117%;
+   margin-top: 80px;
 
 }
 
@@ -88,7 +89,7 @@
     border: 1px solid rgba(201,169,110,0.4); padding: 0.85rem 2.2rem;
     cursor: pointer; border-radius: 2px;
     transition: color 0.25s, border-color 0.25s, background 0.25s;
-    margin-top: 30px;
+    margin-top: 70px;
   }
   .env-open-btn:hover { color: var(--gold-dark); border-color: var(--gold); background: rgba(201,169,110,0.07); }
 
