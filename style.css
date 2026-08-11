@@ -35,7 +35,7 @@
     cursor: pointer;
     transition: transform 0.4s ease;
    min-height: auto; max-height: 100%; width: auto; max-width: 117%;
-   margin-top: 80px;
+   margin-top: 50px;
 
 }
 
@@ -89,7 +89,7 @@
     border: 1px solid rgba(201,169,110,0.4); padding: 0.85rem 2.2rem;
     cursor: pointer; border-radius: 2px;
     transition: color 0.25s, border-color 0.25s, background 0.25s;
-    margin-top: 70px;
+    margin-top: 60px;
   }
   .env-open-btn:hover { color: var(--gold-dark); border-color: var(--gold); background: rgba(201,169,110,0.07); }
 
