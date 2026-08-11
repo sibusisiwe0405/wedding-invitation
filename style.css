@@ -25,16 +25,16 @@
   #envelope-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
   .env-hint {
-    font-family: 'Josefin Sans', sans-serif; font-size: 10px;
+    font-family: 'Josefin Sans', sans-serif; font-size: 12px;
     letter-spacing: 0.45em; text-transform: uppercase; color: var(--text-light);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   @keyframes envPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
 .env {
     cursor: pointer;
     transition: transform 0.4s ease;
-    min-height: 50vh;
+   min-height: auto; max-height: 100%; width: auto; max-width: 121%;
 
 }
 
@@ -82,13 +82,13 @@
 
   .env-open-btn {
     
-    font-family: 'Josefin Sans', sans-serif; font-size: 10px;
+    font-family: 'Josefin Sans', sans-serif; font-size: 12px;
     letter-spacing: 0.42em; text-transform: uppercase;
     color: var(--text-light); background: none;
     border: 1px solid rgba(201,169,110,0.4); padding: 0.85rem 2.2rem;
     cursor: pointer; border-radius: 2px;
     transition: color 0.25s, border-color 0.25s, background 0.25s;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   .env-open-btn:hover { color: var(--gold-dark); border-color: var(--gold); background: rgba(201,169,110,0.07); }
 
