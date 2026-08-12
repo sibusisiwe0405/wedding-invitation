@@ -118,16 +118,28 @@
 
   /* HERO */
 .hero {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 150px 2rem 5rem;
+
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  min-height: 100vh;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 150px 2rem 5rem;
 }
 
 .hero-bg {
-  position: absolute;
+ position: absolute;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
 
   background-size: cover;
   background-position: center center;
@@ -137,7 +149,7 @@
 
   transition: opacity 1.2s ease;
 
-  z-index: -2;
+  pointer-events: none;
 }
 
 .hero-bg.active {
@@ -157,12 +169,20 @@
   z-index: -1;
 }
 
-/* Keep your content above the images */
-.hero > *:not(.hero-bg) {
-  position: relative;
-  z-index: 2;
+.hero > .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 50%, rgba(201,169,110,0.10) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(201,169,110,0.07) 0%, transparent 50%); pointer-events: none; }
+
+.hero > .hero-bg.active {
+  opacity: 1;
+}
+
+.hero > .hero-bg:not(.active) {
+  opacity: 0;
+}
+
   .ornament { color: var(--gold); font-size: 1rem; letter-spacing: 0.4em; margin-bottom: 1.5rem; opacity: 0.65; animation: fadeUp 1s ease both; }
   .hero-tag { font-family: 'Josefin Sans', sans-serif; font-size: 15px; font-style: bold; font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); margin-bottom: 1.5rem; animation: fadeUp 1s ease 0.15s both; }
   .hero-names { font-size: clamp(3.0rem, 8vw, 6.5rem); font-weight: 300; font-style: italic; line-height: 1.05; color: var(--warm-white); position: relative; z-index: 1; animation: fadeUp 1s ease 0.3s both; }
