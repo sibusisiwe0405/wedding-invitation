@@ -121,7 +121,7 @@
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 50%, rgba(201,169,110,0.10) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(201,169,110,0.07) 0%, transparent 50%); pointer-events: none; }
   .ornament { color: var(--gold); font-size: 1rem; letter-spacing: 0.4em; margin-bottom: 1.5rem; opacity: 0.65; animation: fadeUp 1s ease both; }
   .hero-tag { font-family: 'Josefin Sans', sans-serif; font-size: 15px; font-style: bold; font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); margin-bottom: 1.5rem; animation: fadeUp 1s ease 0.15s both; }
-  .hero-names { font-size: clamp(3.5rem, 9vw, 6.5rem); font-weight: 300; font-style: italic; line-height: 1.05; color: var(--warm-white); position: relative; z-index: 1; animation: fadeUp 1s ease 0.3s both; }
+  .hero-names { font-size: clamp(3.0rem, 8vw, 6.5rem); font-weight: 300; font-style: italic; line-height: 1.05; color: var(--warm-white); position: relative; z-index: 1; animation: fadeUp 1s ease 0.3s both; }
   .hero-ampersand { color: var(--gold); font-size: clamp(5rem, 12vw, 9rem); line-height: 0.85; display: block; }
   .hero-date-line { font-family: 'Josefin Sans', sans-serif; font-size: clamp(1.0rem, 1vw, 1.0rem); font-weight: 300; letter-spacing: 0.40em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.5rem; display: flex; align-items: center; gap: 1.5rem; animation: fadeUp 1s ease 0.45s both; }
   .hero-date-line::before, .hero-date-line::after { content: ''; flex: 1; max-width: 70px; height: 1px; background: var(--border); }
