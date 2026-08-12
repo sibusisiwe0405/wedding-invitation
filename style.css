@@ -117,7 +117,49 @@
  
 
   /* HERO */
-  .hero { min-height: 100vh; background: linear-gradient(160deg, #f5f0e8 0%, #fdf8f0 50%, #f0e8d8 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 150px 2rem 5rem; position: relative; overflow: hidden; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+
+  transition: opacity 1.2s ease;
+
+  z-index: -2;
+}
+
+.hero-bg.active {
+  opacity: 1;
+}
+
+/* Dark/soft overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* Keep your content above the images */
+.hero > *:not(.hero-bg) {
+  position: relative;
+  z-index: 2;
+}
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 50%, rgba(201,169,110,0.10) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(201,169,110,0.07) 0%, transparent 50%); pointer-events: none; }
   .ornament { color: var(--gold); font-size: 1rem; letter-spacing: 0.4em; margin-bottom: 1.5rem; opacity: 0.65; animation: fadeUp 1s ease both; }
   .hero-tag { font-family: 'Josefin Sans', sans-serif; font-size: 15px; font-style: bold; font-weight: 300; letter-spacing: 0.4em; text-transform: uppercase; color: var(--warm-white); margin-bottom: 1.5rem; animation: fadeUp 1s ease 0.15s both; }
@@ -161,7 +203,7 @@
    content: "";
     position: absolute;
     inset: 0;
-    background-image: url(/wedding-invitation/Images/pattern-floral.avif);
+    background-image: url(/Images/pattern-floral.avif);
     opacity: 0.22;
     z-index: 0;
 }
@@ -212,7 +254,7 @@
 .outfit-label { font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-light); }
  
   /* COUNTDOWN */
-  .countdown-wrap { background-image: url(/wedding-invitation/Images/field.jpg); background-size: cover; opacity: 1.90; /* adjust this */
+  .countdown-wrap { background-image: url(/Images/field.jpg); background-size: cover; opacity: 1.90; /* adjust this */
   z-index: 0;
   background-position: center;
   background-repeat: no-repeat;
@@ -284,7 +326,7 @@
   font-size: 0.7rem; color: var(--warm-white); opacity: 0.35; transform: rotate(45deg);
    pointer-events: none;
 }
-  .rsvp-wrap { background-image: url(/wedding-invitation/Images/sunflowers.avif); background-size: cover; padding: 6rem 2rem; }
+  .rsvp-wrap { background-image: url(/Images/sunflowers.avif); background-size: cover; padding: 6rem 2rem; }
   .rsvp-inner { max-width: 600px; margin: 0 auto; }
   .rsvp-intro { font-size: 1.15rem; color: var(--warm-white); line-height: 1.85; text-align: center; margin-bottom: 3rem; margin-top: 0.5rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
